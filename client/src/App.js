@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
+import  Header from './components/Header';
+import  UserInput from './components/UserInput';
+import  List from './components/List';
 
 class App extends Component {
-  state = {users: []}
+  constructor(props){
+    super(props);
+    this.state = {
+        user: []
+    }
+  }
   componentDidMount() {
       fetch('/users')
           .then(res => res.json())
@@ -11,10 +18,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Users</h1>
-          {this.state.users.map(user =>
-              <div key={user.id}>{user.username}</div>
-          )}
+        <Header></Header>
+        <UserInput></UserInput>
+        <List></List>
       </div>
     );
   }
