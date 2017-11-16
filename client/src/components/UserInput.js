@@ -12,6 +12,7 @@ class App extends Component {
     return (
         <div>
             <input/>
+            <button className="btn btn-primary">Search</button>
         </div>
       
     );
